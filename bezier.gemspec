@@ -9,4 +9,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency('rake', '~> 10.3.1')
   s.add_development_dependency('minitest', '~> 5.3.3')
+  s.add_development_dependency('yard', '~> 0.8.7.4')
+  s.add_development_dependency('yard-tomdoc', '~> 0.7.1')
 end
