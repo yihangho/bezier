@@ -15,6 +15,27 @@ describe Bezier::Point do
     end
   end
 
+  describe "#dimensions" do
+    it "should return the dimension" do
+      assert_equal @point.dimensions, 2
+    end
+  end
+
+  describe "#distance" do
+    it "should return nil if the other party is not a Point" do
+      assert_nil @point.distance(1)
+    end
+
+    it "should return nil if the other party is not of the same dimension" do
+      assert_nil @point.distance(Bezier::Point.new(0))
+    end
+
+    it "should calculate the correct distance" do
+      assert_equal @point.distance(Bezier::Point.new(4, 6)), 5
+      assert_equal @point.distance(Bezier::Point.new(1, 1)), 1
+    end
+  end
+
   describe "equality" do
     it "should return true if the coordinates are exactly equal" do
       assert_equal @point, Bezier::Point.new(1, 2)

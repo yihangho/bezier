@@ -15,6 +15,13 @@ module Bezier
       self.coordinates = coordinates
     end
 
+    # Public: Get the dimension.
+    #
+    # Returns a number
+    def dimensions
+      coordinates.length
+    end
+
     # Public: Vector addition.
     #
     # another - Another instance of Point having the same dimension as the
@@ -30,7 +37,7 @@ module Bezier
     #
     # Returns a new Point if addition can be carried out, nil otherwise
     def +(another)
-      if another.respond_to?(:coordinates) && another.coordinates.length == coordinates.length
+      if another.respond_to?(:coordinates) && another.dimensions == dimensions
         new_coordinates = []
         coordinates.each_index do |i|
           new_coordinates << coordinates[i] + another.coordinates[i]
@@ -78,6 +85,26 @@ module Bezier
       else
         nil
       end
+    end
+
+    # Public: Calculate the distance between two points
+    #
+    # another - A Point
+    #
+    # Examples
+    #
+    #   Bezier::Point.new(3, 4).distance Bezier::Point.new(0, 0)
+    #   => 5
+    #
+    # Returns a number if the distance is calculable, nil otherwise
+    def distance(another)
+      return nil unless another.respond_to?(:coordinates) && another.dimensions == dimensions
+
+      square_diff = 0
+      coordinates.each_index do |i|
+        square_diff += (coordinates[i] - another.coordinates[i]) ** 2
+      end
+      ::Math.sqrt(square_diff)
     end
   end
 end
