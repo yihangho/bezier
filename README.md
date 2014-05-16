@@ -14,3 +14,6 @@ p3 = Bezier::Point.new(200, 20)
 bezier = Bezier::Bezier.new(p0, p1, p2, p3)
 Bezier::Painter.new(bezier.run).save # Check Bézier.png
 ```
+
+# Documentation
+[RubyDoc](http://rubydoc.info/github/yihangho/bezier/master/frames)
