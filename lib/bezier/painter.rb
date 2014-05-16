@@ -39,7 +39,6 @@ module Bezier
         y = pt.y - parameters[:y_offset]
         image[x.round, y.round] = ChunkyPNG::Color::BLACK
       end
-      p image.class
       image.save(path)
     end
 
