@@ -79,4 +79,11 @@ describe Bezier::Point do
       assert_equal (@point * -1.2), Bezier::Point.new(-1.2, -2.4)
     end
   end
+
+  describe "#x and #y" do
+    it "should return the correct values" do
+      assert_equal @point.x, 1
+      assert_equal @point.y, 2
+    end
+  end
 end

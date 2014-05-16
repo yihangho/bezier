@@ -22,6 +22,20 @@ module Bezier
       coordinates.length
     end
 
+    # Public: Get the first element of the coordinates
+    #
+    # Returns a number
+    def x
+      coordinates.first
+    end
+
+    # Public: Get the last element of the coordinates
+    #
+    # Returns a number
+    def y
+      coordinates.last
+    end
+
     # Public: Vector addition.
     #
     # another - Another instance of Point having the same dimension as the
