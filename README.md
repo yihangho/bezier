@@ -12,7 +12,7 @@ p2 = Bezier::Point.new(200, 100)
 p3 = Bezier::Point.new(200, 20)
 
 bezier = Bezier::Bezier.new(p0, p1, p2, p3)
-Bezier::Painter.new(bezier.run).save # Check Bézier.png
+Bezier::Painter.new { |p| p.points = bezier.run }.save # Check Bézier.png
 ```
 
 # Documentation
