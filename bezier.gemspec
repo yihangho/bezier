@@ -1,9 +1,13 @@
 Gem::Specification.new do |s|
-  s.name   = 'bezier'
-  s.version = '0.0.1'
-  s.license = 'MIT'
-  s.summary = '"Draw" a Bézier cruve'
-  s.author  = 'Yihang Ho'
+  s.name        = 'bezier'
+  s.version     = '0.0.1'
+  s.license     = 'MIT'
+  s.summary     = 'Draw a Bézier curve'
+  s.description = 'Library to draw Bézier curves'
+  s.author      = 'Yihang Ho'
+  s.email       = 'me@yihangho.com'
+  s.homepage    = 'https://github.com/yihangho/bezier'
+
 
   s.files = `git ls-files`.split($/)
 
