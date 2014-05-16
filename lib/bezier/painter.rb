@@ -32,6 +32,7 @@ module Bezier
     #
     # Returns nothing
     def save
+      parameters = get_parameters
       image = ChunkyPNG::Image.new(parameters[:width], parameters[:height], ChunkyPNG::Color::WHITE)
       points.each do |pt|
         x = pt.x - parameters[:x_offset]
